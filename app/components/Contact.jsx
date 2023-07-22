@@ -11,12 +11,11 @@ const Contact = () => {
   } = useForm();
 
   // const api_url = "http://localhost:4000/";
-  const api_url = "https://portfolio-api-7phe.onrender.com/";
+  const api_url = "https://api-portfolio-pfu4.onrender.com/";
 
   const formSubmit = (data) => {
-    console.log(data);
-
     try {
+      console.log(data);
       fetch(api_url + "contact", {
         method: "POST",
         headers: {
@@ -26,6 +25,7 @@ const Contact = () => {
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log(data)
           if (data.status) {
             let message = data.message;
             toast.success(message, {
@@ -42,7 +42,7 @@ const Contact = () => {
         })
         .catch((error) => console.error(error));
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

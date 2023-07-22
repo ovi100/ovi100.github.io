@@ -1,54 +1,47 @@
-import {
-  skill1,
-  skill2,
-  skill3,
-  skill4,
-  skill5,
-  skill6,
-} from "@/public/assets/images";
+
 import SkillBox from "./SkillBox";
 
 const Skills = () => {
   const skills = {
     programming_language: [
-      "C++",
-      "C#",
-      "Java",
-      "Ruby",
-      "Javascript",
-      "ES6",
-      "PHP",
+      { name: "Javascript", percentage: "90%" },
+      { name: "Ruby", percentage: "50%" },
+      { name: "ES6", percentage: "90%" },
+      { name: "Map API", percentage: "75%" },
     ],
     javaScript_library: [
-      "React Js",
-      "React Native",
-      "Next Js",
-      "Jquery",
-      "Knockout Js",
-      "Chart Js",
-      "AJAX",
-      "Map API",
-      "JWT",
+      { name: "React Js", percentage: "85%" },
+      { name: "React Native", percentage: "60%" },
+      { name: "Next Js", percentage: "50%" },
+      { name: "Knockout Js", percentage: "95%" },
+      { name: "JWT", percentage: "80%" },
     ],
     frontend: [
-      "HTML5",
-      "CSS3",
-      "SASS",
-      "Tailwind CSS",
-      "Bootstrap",
-      "MUI",
-      "JSON",
+      { name: "Tailwind CSS", percentage: "90%" },
+      { name: "Bootstrap", percentage: "95%" },
+      { name: "MUI", percentage: "80%" },
+      { name: "JSON", percentage: "85%" },
+      { name: "Chart Js", percentage: "80%" },
     ],
-    backend: ["Express Js", "MongoDB", "Firebase", "MySQL", "Rest API"],
+    backend: [
+      { name: "JSON", percentage: "85%" },
+      { name: "Express Js", percentage: "75%" },
+      { name: "MongoDB", percentage: "80%" },
+      { name: "Firebase", percentage: "85%" },
+      { name: "Rest API", percentage: "90%" },
+    ],
     tools: [
-      "VS Code",
-      "Visual Studio",
-      "Android Studio",
-      "Github",
-      "Figma",
-      "Zoho Sprint",
+      { name: "Git", percentage: "95%" },
+      { name: "Figma", percentage: "85%" },
+      { name: "Zoho Sprint", percentage: "90%" },
+      { name: "Photoshop", percentage: "85%" },
     ],
-    languages: ["English", "Spanish", "German", "Hindi"],
+    languages: [
+      { name: "English", percentage: "90%" },
+      { name: "Spanish", percentage: "30%" },
+      { name: "German", percentage: "50%" },
+      { name: "Hindi", percentage: "70%" },
+    ],
   };
 
   const {
@@ -72,15 +65,14 @@ const Skills = () => {
       </div>
       <div className="content 2xl:w-3/4 xl:w-[90%] mx-auto lg:grid grid-cols-2 gap-10 mt-10">
         <SkillBox
-          icon={skill1}
           title="programming"
-          skill={programming_language}
+          skills={programming_language}
         />
-        <SkillBox icon={skill2} title="javascript" skill={javaScript_library} />
-        <SkillBox icon={skill3} title="frontend" skill={frontend} />
-        <SkillBox icon={skill4} title="backend" skill={backend} />
-        <SkillBox icon={skill5} title="tools" skill={tools} />
-        <SkillBox icon={skill6} title="languages" skill={languages} />
+        <SkillBox title="javascript library" skills={javaScript_library} />
+        <SkillBox title="frontend" skills={frontend} />
+        <SkillBox title="backend" skills={backend} />
+        <SkillBox title="tools" skills={tools} />
+        <SkillBox title="languages" skills={languages} />
       </div>
     </div>
   );

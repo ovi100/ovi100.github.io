@@ -1,35 +1,37 @@
 import Image from "next/image";
 
-const SkillBox = ({ icon, title, skill }) => {
+const SkillBox = ({ title, skills }) => {
+  console.log(skills)
   return (
-    <div
-      className="skill-box flex gap-5 border-2 border-blue-400 rounded-md mb-4 
-      transition duration-300 ease-linear hover:shadow-[0_0_10px_6px_rgba(0,0,0,.8)] hover:cursor-pointer"
-    >
-      <div className="image bg-blue-400 h-full md:flex items-center flex-col justify-center hidden p-8">
-        <Image
-          className={`${skill[0] === "React Js" ? "w-[72px]" : "w-14"} h-auto`}
-          src={icon}
-          alt="icon"
-        />
-        {/* <div className="title text-xs capitalize mt-3">{title}</div> */}
-      </div>
-      <div className="content p-2">
-        <div className="title text-white text-base capitalize my-3">
-          {title}
+    <>
+
+      <div
+        className="skill-box"
+      >
+        <div className="header mb-5">
+          <div className="main-title text-xl text-[#f5f5f5] font-bold capitalize">
+            {title}
+          </div>
         </div>
-        <div className="skill-items text-xs text-[#777] flex flex-wrap gap-2 lg:gap-3 capitalize my-2">
-          {skill.map((item, index) => (
-            <div
-              className="item bg-black text-white text-sm lg:text-xs rounded-3xl px-3 py-1.5"
-              key={index}
-            >
-              {item}
+        <div className="skill-content">
+          {skills.map((skill, index) => (
+            <div className="mb-3" key={index}>
+              <div className="lable flex items-center justify-between">
+                <div className="name text-white text-[13px]">{skill.name}</div>
+                <div className="percentage text-[#888] text-[11px]">{skill.percentage}</div>
+              </div>
+              <div className="progress">
+                <div className="line bg-[#333] w-full h-2 border-2 border-[#444] rounded-lg mt-1">
+                  <div className={`bg-blue-500 w-[${skill.percentage}] h-1 rounded-lg`}></div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+
+    </>
+
   );
 };
 

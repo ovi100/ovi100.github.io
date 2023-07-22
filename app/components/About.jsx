@@ -15,7 +15,7 @@ const About = () => {
         transition={{ duration: 0.5 }}
       >
         <Image
-          className="w-96 h-80 lg:w-full lg:h-auto rounded-full mx-auto"
+          className="lg:w-full lg:h-auto mx-auto"
           src={profileImage}
           alt="profile picture"
         />
