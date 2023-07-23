@@ -1,46 +1,45 @@
-
 import SkillBox from "./SkillBox";
 
 const Skills = () => {
   const skills = {
     programming_language: [
-      { name: "Javascript", percentage: "90%" },
-      { name: "Ruby", percentage: "50%" },
-      { name: "ES6", percentage: "90%" },
-      { name: "Map API", percentage: "75%" },
+      { name: "Javascript", percentage: "90%", width: "w-[90%]" },
+      { name: "Ruby", percentage: "50%", width: "w-[50%]" },
+      { name: "ES6", percentage: "90%", width: "w-[90%]" },
+      { name: "Map API", percentage: "75%", width: "w-[75%]" },
     ],
     javaScript_library: [
-      { name: "React Js", percentage: "85%" },
-      { name: "React Native", percentage: "60%" },
-      { name: "Next Js", percentage: "50%" },
-      { name: "Knockout Js", percentage: "95%" },
-      { name: "JWT", percentage: "80%" },
+      { name: "React Js", percentage: "85%", width: "w-[85%]" },
+      { name: "React Native", percentage: "60%", width: "w-[60%]" },
+      { name: "Next Js", percentage: "50%", width: "w-[50%]" },
+      { name: "Knockout Js", percentage: "95%", width: "w-[95%]" },
+      { name: "JWT", percentage: "80%", width: "w-[80%]" },
     ],
     frontend: [
-      { name: "Tailwind CSS", percentage: "90%" },
-      { name: "Bootstrap", percentage: "95%" },
-      { name: "MUI", percentage: "80%" },
-      { name: "JSON", percentage: "85%" },
-      { name: "Chart Js", percentage: "80%" },
+      { name: "Tailwind CSS", percentage: "90%", width: "w-[90%]" },
+      { name: "Bootstrap", percentage: "95%", width: "w-[95%]" },
+      { name: "MUI", percentage: "80%", width: "w-[80%]" },
+      { name: "JSON", percentage: "85%", width: "w-[85%]" },
+      { name: "Chart Js", percentage: "80%", width: "w-[80%]" },
     ],
     backend: [
-      { name: "JSON", percentage: "85%" },
-      { name: "Express Js", percentage: "75%" },
-      { name: "MongoDB", percentage: "80%" },
-      { name: "Firebase", percentage: "85%" },
-      { name: "Rest API", percentage: "90%" },
+      { name: "JSON", percentage: "85%", width: "w-[85%]" },
+      { name: "Express Js", percentage: "75%", width: "w-[75%]" },
+      { name: "MongoDB", percentage: "80%", width: "w-[80%]" },
+      { name: "Firebase", percentage: "85%", width: "w-[85%]" },
+      { name: "Rest API", percentage: "90%", width: "w-[90%]" },
     ],
     tools: [
-      { name: "Git", percentage: "95%" },
-      { name: "Figma", percentage: "85%" },
-      { name: "Zoho Sprint", percentage: "90%" },
-      { name: "Photoshop", percentage: "85%" },
+      { name: "Git", percentage: "95%", width: "w-[95%]" },
+      { name: "Figma", percentage: "85%", width: "w-[85%]" },
+      { name: "Zoho Sprint", percentage: "90%", width: "w-[90%]" },
+      { name: "Photoshop", percentage: "85%", width: "w-[85%]" },
     ],
     languages: [
-      { name: "English", percentage: "90%" },
-      { name: "Spanish", percentage: "30%" },
-      { name: "German", percentage: "50%" },
-      { name: "Hindi", percentage: "70%" },
+      { name: "English", percentage: "90%", width: "w-[90%]" },
+      { name: "Spanish", percentage: "30%", width: "w-[30%]" },
+      { name: "German", percentage: "50%", width: "w-[50%]" },
+      { name: "Hindi", percentage: "70%", width: "w-[70%]" },
     ],
   };
 
@@ -64,10 +63,7 @@ const Skills = () => {
         </div>
       </div>
       <div className="content 2xl:w-3/4 xl:w-[90%] mx-auto lg:grid grid-cols-2 gap-10 mt-10">
-        <SkillBox
-          title="programming"
-          skills={programming_language}
-        />
+        <SkillBox title="programming" skills={programming_language} />
         <SkillBox title="javascript library" skills={javaScript_library} />
         <SkillBox title="frontend" skills={frontend} />
         <SkillBox title="backend" skills={backend} />

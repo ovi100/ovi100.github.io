@@ -1,6 +1,6 @@
 import profileImage from "./about.png";
-import expImage from "./exp.png";
 import eduImage from "./edu.png";
+import expImage from "./exp.png";
 import icon1 from "./icon1.svg";
 import icon2 from "./icon2.svg";
 import icon3 from "./icon3.svg";
@@ -18,7 +18,6 @@ import pdImage6 from "./p6.jpg";
 import pdImage7 from "./p7.jpg";
 import pdImage8 from "./p8.jpg";
 import pdImage9 from "./p9.jpg";
-import projectImage from "./project.jpg";
 import skill1 from "./skill1.svg";
 import skill2 from "./skill2.svg";
 import skill3 from "./skill3.svg";
@@ -27,12 +26,9 @@ import skill5 from "./skill5.svg";
 import skill6 from "./skill6.svg";
 
 export {
-  icon1,
+  eduImage, expImage, icon1,
   icon2,
-  icon3,
-  expImage,
-  eduImage,
-  pdImage1,
+  icon3, pdImage1,
   pdImage10,
   pdImage11,
   pdImage12,
@@ -47,7 +43,6 @@ export {
   pdImage8,
   pdImage9,
   profileImage,
-  projectImage,
   skill1,
   skill2,
   skill3,
