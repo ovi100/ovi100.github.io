@@ -68,7 +68,10 @@ const Resume = () => {
             ))}
           </div>
         </div>
-        <div className="education lg:flex justify-center xl:gap-14 lg:gap-7 md:mb-0 mb-5">
+        <div className="education lg:flex lg:flex-row-reverse justify-center xl:gap-14 lg:gap-7 md:mb-0 mb-5">
+          <div className="image">
+            <Image src={eduImage} alt="expImage" />
+          </div>
           <div className="exp-content">
             <div className="header mb-10">
               <div className="main-title text-xl text-[#f5f5f5] font-bold capitalize">
@@ -81,9 +84,6 @@ const Resume = () => {
             {educations.map((education, index) => (
               <ResumeCard key={index} item={education} isExperience={false} />
             ))}
-          </div>
-          <div className="image">
-            <Image src={eduImage} alt="expImage" />
           </div>
         </div>
       </div>

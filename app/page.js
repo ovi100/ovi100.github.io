@@ -36,7 +36,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <Element name="about" className="about h-screen md:h-full p-5">
+      <Element name="about" className="about h-full md:h-screen p-5">
         <About />
       </Element>
       <Element name="resume" className="resume p-5">
@@ -51,7 +51,7 @@ export default function Portfolio() {
       <Element name="portfolio" className="portfolio p-5">
         <Works />
       </Element>
-      <Element name="contact" className="contact p-5">
+      <Element name="contact" className="contact md:h-screen p-5">
         <Contact />
       </Element>
       {isVisible && (
