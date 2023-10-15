@@ -11,7 +11,7 @@ const Contact = () => {
   } = useForm();
 
   // const api_url = "http://localhost:4000/";
-  const api_url = "https://api-portfolio-pfu4.onrender.com/";
+  const api_url = "https://api-protfolio.onrender.com/";
 
   const formSubmit = (data) => {
     try {
