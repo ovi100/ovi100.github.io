@@ -1,27 +1,8 @@
-import { icon1, icon2, icon3 } from "@/public/assets/images";
+import { person } from "../data";
 import CertificateCard from "./CertificateCard";
 
 const Certificates = () => {
-  const certificates = [
-    {
-      image: icon1,
-      year: "March 2020",
-      institute: "freecodecamp.org",
-      title: "Responsive Web Design",
-    },
-    {
-      image: icon2,
-      year: "July 2020",
-      institute: "freecodecamp.org",
-      title: "JavaScript Algorithms and Data Structures",
-    },
-    {
-      image: icon3,
-      year: "Dec 2020",
-      institute: "freecodecamp.org",
-      title: "Front End Development",
-    },
-  ];
+  const certificates = person.certificates;
 
   return (
     <div className="mt-20">

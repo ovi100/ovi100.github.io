@@ -1,11 +1,12 @@
 import { profileImage } from "@/public/assets/images";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-scroll";
 import ReactTypingEffect from "react-typing-effect";
+import { person } from "../data";
 
 const About = () => {
+  const socialLink = person.social_media;
   return (
     <div className="lg:flex items-center justify-center gap-10 mt-5 lg:mt-20">
       <motion.div
@@ -28,7 +29,11 @@ const About = () => {
       >
         <div className="title text-base text-[#aaa] capitalize mb-2">
           <ReactTypingEffect
-            text={["full stack developer", "front end developer"]}
+            text={[
+              "software engineer",
+              "full stack developer",
+              "front end developer",
+            ]}
             eraseDelay={1000}
             typingDelay={1000}
           />
@@ -37,32 +42,25 @@ const About = () => {
           abu sayed
         </div>
         <div className="short-text text-sm text-[#d5d5d5] leading-6">
-          As an accomplished software developer with five years of valuable
-          industry experience, my aim is to continue leveraging my technical
-          expertise and innovative mindset to drive transformative advancements
-          in software development. Over the next five years, I am dedicated to
-          spearheading ambitious projects, collaborating with cross-functional
-          teams, and consistently delivering high-quality solutions that exceed
-          client expectations. Through continuous learning and adapting to
-          emerging technologies, I aspire to become a recognized leader in the
-          software development domain, contributing significantly to the growth
-          and success of the organization I serve.
+          I am an experienced Full Stack Developer and React expert specializing
+          in JavaScript, MongoDB, and Express JS. Having developed web and
+          mobile-based applications and optimized REST API calls to improve page
+          speed. I am skilled in collaborating with stakeholders to gather
+          requirements and provide technical solutions. I am seeking a Full
+          Stack React Developer position at a company where I can replicate my
+          development and collaboration skills.
         </div>
         <div className="social-link flex items-center gap-3 my-5 justify-center lg:justify-start">
-          <a href="https://www.facebook.com/sayeed2011" target="_blank">
-            <FaFacebookSquare className="w-6 h-6" />
-          </a>
-          <a href="https://www.linkedin.com/in/sayed2017" target="_blank">
-            <FaLinkedin className="w-6 h-6" />
-          </a>
-          <a href="https://github.com/ovi100" target="_blank">
-            <FaGithubSquare className="w-6 h-6" />
-          </a>
+          {socialLink.map((item) => (
+            <a href={item.link} target="_blank" key={item.name}>
+              {item.icon}
+            </a>
+          ))}
         </div>
         <div className="buttons flex items-center gap-5 mt-5 justify-center lg:justify-start">
           <a
             className="bg-[#333] border-2 border-blue-400 cursor-pointer rounded-3xl px-4 py-2 hover:bg-blue-400"
-            href="https://drive.google.com/file/d/1WNEPaC0EP_rab-OW2-dqWakmbpFwq2va/view?usp=drive_link"
+            href="https://shorturl.at/oAYli"
             target="_blank"
           >
             Download CV

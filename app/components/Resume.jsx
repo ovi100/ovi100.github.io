@@ -1,48 +1,14 @@
 import { expImage, eduImage } from "@/public/assets/images";
 import ResumeCard from "./ResumeCard";
 import Image from "next/image";
+import { person } from "../data";
+import ResumeAnimation from "./animations/ResumeAnimation";
+import EducationAnimation from "./animations/EducationAnimation";
 
 const Resume = () => {
-  const educations = [
-    {
-      year: "2011 - 2015",
-      institute: "american international university-bangladesh",
-      title: "BSc. Computer Science",
-    },
-    {
-      year: "2009 - 2011",
-      institute: "govt. adamjeenagar m w college",
-      title: "HSC (Science)",
-    },
-    {
-      year: "2007 - 2009",
-      institute: "m w high school",
-      title: "SSC (Science)",
-    },
-  ];
+  const educations = person.educations;
 
-  const experiences = [
-    {
-      year: "Jan 2023 - Present",
-      institute: "ACI Logistics Ltd.",
-      title: "Software Engineer (Full Stack)",
-    },
-    {
-      year: "Dec 2017 - Dec 2022",
-      institute: "Storrea Ltd.",
-      title: "Software Engineer (Frontend)",
-    },
-    {
-      year: "Feb 2017 - Oct 2017",
-      institute: "Ennvisio Digital Ltd.",
-      title: "Web Designer",
-    },
-    {
-      year: "Mar 2015 - Dec 2015",
-      institute: "american international university-bangladesh",
-      title: "Lab Assistant",
-    },
-  ];
+  const experiences = person.experiences;
 
   return (
     <div className="mt-20">
@@ -52,7 +18,7 @@ const Resume = () => {
       <div className="content 2xl:w-3/4 xl:w-[90%] w-[95%] mx-auto mt-10">
         <div className="experience lg:flex justify-center xl:gap-14 lg:gap-7 mt-10 lg:mt-0">
           <div className="image">
-            <Image src={expImage} alt="expImage" />
+            <ResumeAnimation />
           </div>
           <div className="exp-content">
             <div className="header mb-10">
@@ -69,8 +35,8 @@ const Resume = () => {
           </div>
         </div>
         <div className="education lg:flex lg:flex-row-reverse justify-center xl:gap-14 lg:gap-7 md:mb-0 mb-5">
-          <div className="image">
-            <Image src={eduImage} alt="expImage" />
+          <div className="image -mt-10">
+            <EducationAnimation />
           </div>
           <div className="exp-content">
             <div className="header mb-10">

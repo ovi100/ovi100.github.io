@@ -1,22 +1,23 @@
-// "use client";
+"use client";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { person } from "../data";
 
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const contacts = person.contact;
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  // const api_url = "http://localhost:4000/";
-  const api_url = "https://api-protfolio.onrender.com/";
-
   const formSubmit = (data) => {
+    setIsLoading(true);
     try {
-      console.log(data);
-      fetch(api_url + "contact", {
+      fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -25,8 +26,7 @@ const Contact = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
-          if (data.status) {
+          if (data.success) {
             let message = data.message;
             toast.success(message, {
               hideProgressBar: true,
@@ -40,11 +40,24 @@ const Contact = () => {
             });
           }
         })
-        .catch((error) => console.error(error));
+        .catch((error) => {
+          let message = error.message;
+          toast.error(message, {
+            hideProgressBar: true,
+            theme: "colored",
+          });
+        });
     } catch (error) {
-      console.log(error);
+      let message = error.message;
+      toast.error(message, {
+        hideProgressBar: true,
+        theme: "colored",
+      });
     }
+    setIsLoading(false);
   };
+
+  console.log(isLoading);
 
   return (
     <div className="mt-20">
@@ -59,70 +72,12 @@ const Contact = () => {
       </div>
       <div className="content 2xl:w-3/4 xl:w-[90%] mx-auto md:flex items-center gap-8 mt-10">
         <div className="text-info lg:flex-[0.3_1_0%]">
-          <div className="phone flex gap-5 mb-4">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-10 h-10 text-blue-400"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
-                />
-              </svg>
+          {contacts.map((contact) => (
+            <div className="phone flex gap-5 mb-4 last:mb-0" key={contact.name}>
+              <div className="icon">{contact.icon}</div>
+              <div className="text text-[#f5f5f5] text-lg">{contact.text}</div>
             </div>
-            <div className="text text-[#f5f5f5] text-lg">+8801675600270</div>
-          </div>
-          <div className="address flex gap-5 mb-4">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-10 h-10 text-blue-400"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                />
-              </svg>
-            </div>
-            <div className="text text-[#f5f5f5] text-lg">Dhaka,Bangladesh</div>
-          </div>
-          <div className="email flex gap-5">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-10 h-10 text-blue-400"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                />
-              </svg>
-            </div>
-            <div className="text text-[#f5f5f5] text-lg">
-              sayeed.abu02@gmail.com
-            </div>
-          </div>
+          ))}
         </div>
         <div className="contact-form lg:flex-[0.6_1_0%] md:flex-[1_1_0%] md:mt-0 mt-5">
           <div className="header mb-5">
@@ -204,14 +159,36 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-
               <div className="button">
                 <button
                   type="submit"
+                  disabled={isLoading}
                   className="bg-[#333] text-white border-2 border-blue-400 cursor-pointer rounded-3xl px-4 
                   py-2 hover:bg-blue-400 transition duration-300 ease-linear"
                 >
-                  send message
+                  {isLoading ? (
+                    <div className="flex items-center gap-x-2">
+                      <svg
+                        aria-hidden="true"
+                        class="inline w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-blue-500"
+                        viewBox="0 0 100 101"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                          fill="currentFill"
+                        />
+                      </svg>
+                      <span>Sending...</span>
+                    </div>
+                  ) : (
+                    <span>send message</span>
+                  )}
                 </button>
               </div>
             </form>

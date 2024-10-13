@@ -1,56 +1,30 @@
-import SkillBox from "./SkillBox";
+import { useState } from "react";
+import { person } from "../data";
+import TabNav from "./TabNav";
 
 const Skills = () => {
-  const skills = {
-    programming_language: [
-      { name: "Javascript", percentage: "85%", width: "w-[85%]" },
-      { name: "Ruby", percentage: "50%", width: "w-[50%]" },
-      { name: "ES6", percentage: "90%", width: "w-[90%]" },
-      { name: "Map API", percentage: "70%", width: "w-[70%]" },
-    ],
-    javaScript_library: [
-      { name: "React Js", percentage: "80%", width: "w-[80%]" },
-      { name: "React Native & Next Js", percentage: "50%", width: "w-[50%]" },
-      // { name: "Next Js", percentage: "50%", width: "w-[50%]" },
-      { name: "Knockout Js", percentage: "90%", width: "w-[90%]" },
-      { name: "JWT", percentage: "80%", width: "w-[80%]" },
-    ],
-    frontend: [
-      { name: "Tailwind CSS", percentage: "90%", width: "w-[90%]" },
-      { name: "Bootstrap", percentage: "95%", width: "w-[95%]" },
-      { name: "MUI", percentage: "80%", width: "w-[80%]" },
-      { name: "JSON", percentage: "85%", width: "w-[85%]" },
-      { name: "Chart Js", percentage: "80%", width: "w-[80%]" },
-    ],
-    backend: [
-      { name: "Node Js", percentage: "75%", width: "w-[75%]" },
-      { name: "Express Js", percentage: "75%", width: "w-[75%]" },
-      { name: "MongoDB", percentage: "80%", width: "w-[80%]" },
-      { name: "Firebase", percentage: "85%", width: "w-[85%]" },
-      { name: "Rest API", percentage: "90%", width: "w-[90%]" },
-    ],
-    tools: [
-      { name: "Git", percentage: "95%", width: "w-[95%]" },
-      { name: "Figma", percentage: "65%", width: "w-[65%]" },
-      { name: "Zoho Sprint", percentage: "90%", width: "w-[90%]" },
-      { name: "Photoshop", percentage: "50%", width: "w-[50%]" },
-    ],
-    languages: [
-      { name: "English", percentage: "90%", width: "w-[90%]" },
-      { name: "Spanish", percentage: "30%", width: "w-[30%]" },
-      { name: "German", percentage: "50%", width: "w-[50%]" },
-      { name: "Hindi", percentage: "70%", width: "w-[60%]" },
-    ],
-  };
-
+  const navItems = [
+    "all",
+    "programming",
+    "frontend",
+    "backend",
+    "platforms",
+    "tools",
+    "others",
+  ];
+  const [active, setActive] = useState(navItems[0]);
   const {
-    programming_language,
-    javaScript_library,
-    frontend,
-    backend,
-    tools,
+    all,
     languages,
-  } = skills;
+    js_frameworks,
+    css_libraries,
+    backend,
+    platforms,
+    tools,
+    others,
+  } = person.skills;
+
+  const frontend = js_frameworks.concat(css_libraries);
 
   return (
     <div className="mt-20">
@@ -62,13 +36,108 @@ const Skills = () => {
           <div className="bg-blue-500 w-[30px] h-[2px]"></div>
         </div>
       </div>
-      <div className="content 2xl:w-3/4 xl:w-[90%] mx-auto lg:grid grid-cols-2 gap-10 mt-10">
-        <SkillBox title="programming" skills={programming_language} />
-        <SkillBox title="javascript library" skills={javaScript_library} />
-        <SkillBox title="frontend" skills={frontend} />
-        <SkillBox title="backend" skills={backend} />
-        <SkillBox title="tools" skills={tools} />
-        <SkillBox title="languages" skills={languages} />
+      <div className="content 2xl:w-3/4 xl:w-[90%] mx-auto mt-10">
+        <div className="tab-nav mb-10">
+          <TabNav navItems={navItems} active={active} setActive={setActive} />
+        </div>
+        <div className="tab-content mt-10">
+          {active === "all" && (
+            <div className="flex items-center flex-wrap gap-5">
+              {all.map((item, index) => (
+                <div
+                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  key={index}
+                >
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
+          {active === "programming" && (
+            <div className="flex items-center flex-wrap gap-5">
+              {languages.map((item, index) => (
+                <div
+                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  key={index}
+                >
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
+          {active === "frontend" && (
+            <div className="flex items-center flex-wrap gap-5">
+              {frontend.map((item, index) => (
+                <div
+                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  key={index}
+                >
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
+          {active === "backend" && (
+            <div className="flex items-center flex-wrap gap-5">
+              {backend.map((item, index) => (
+                <div
+                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  key={index}
+                >
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
+          {active === "platforms" && (
+            <div className="flex items-center flex-wrap gap-5">
+              {platforms.map((item, index) => (
+                <div
+                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  key={index}
+                >
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
+          {active === "tools" && (
+            <div className="flex items-center flex-wrap gap-5">
+              {tools.map((item, index) => (
+                <div
+                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  key={index}
+                >
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
+          {active === "others" && (
+            <div className="flex items-center flex-wrap gap-5">
+              {others.map((item, index) => (
+                <div
+                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  key={index}
+                >
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
+          {active === "languages" && (
+            <div className="flex items-center flex-wrap gap-5">
+              {communication_languages.map((item, index) => (
+                <div
+                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  key={index}
+                >
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Skills from "./components/Skills";
 import Works from "./components/Works";
+import Languages from "./components/Languages";
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,6 +51,9 @@ export default function Portfolio() {
       </Element>
       <Element name="portfolio" className="portfolio p-5">
         <Works />
+      </Element>
+      <Element name="languages" className="languages p-5">
+        <Languages />
       </Element>
       <Element name="contact" className="contact md:h-screen p-5">
         <Contact />
