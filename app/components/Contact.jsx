@@ -60,8 +60,6 @@ const Contact = () => {
     }
   };
 
-  console.log(isLoading);
-
   return (
     <div className="mt-20">
       <ToastContainer transition={Slide} />
