@@ -1,4 +1,3 @@
-"use client";
 import { person } from "@/app/data";
 import Image from "next/image";
 
