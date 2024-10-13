@@ -11,13 +11,14 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const formSubmit = (data) => {
-    setIsLoading(true);
+  const formSubmit = async (data) => {
     try {
-      fetch("/api/contact", {
+      setIsLoading(true);
+      await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,8 +54,10 @@ const Contact = () => {
         hideProgressBar: true,
         theme: "colored",
       });
+    } finally {
+      reset();
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   console.log(isLoading);

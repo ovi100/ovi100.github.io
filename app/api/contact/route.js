@@ -17,23 +17,23 @@ export async function POST(req) {
     await transporter.sendMail({
       from: email,
       to: process.env.EMAIL_USER, // Your email to receive messages
-      subject: subject ? subject : `New message from ${name}`,
+      subject: subject ? subject : `New message from ${name.charAt(0).toUpperCase() + name.slice(1)}`,
       text: message,
       html: subject
         ? `
-          <p>New message from <strong class="capitalize">${name}</strong></p> 
-          <p><strong>Name:</strong> <span class="capitalize">${name}</span></p>
+          <p>New message from <strong>${name.charAt(0).toUpperCase() + name.slice(1)}</strong></p> 
+          <p><strong>Name:</strong> ${name.charAt(0).toUpperCase() + name.slice(1)}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Message:</strong><br/>${message}</p>`
         : `
-          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Name:</strong> ${name.charAt(0).toUpperCase() + name.slice(1)}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Message:</strong><br/>${message}</p>`,
     });
 
     return NextResponse.json({
       success: true,
-      message: "Email sent successfully",
+      message: "Message sent successfully",
     });
   } catch (error) {
     return NextResponse.json({

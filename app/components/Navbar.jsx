@@ -36,7 +36,7 @@ const Navbar = () => {
           sticky ? "fixed top-0 shadow-[0_0_10px_0_rgba(0,0,0,.8)]" : ""
         }`}
       >
-        <div className="logo flex items-center">
+        <a className="logo flex items-center" href="/">
           <div className="letters bg-blue-500 w-12 h-12 rounded-full text-white text-2xl font-bold flex items-center justify-center">
             AS
           </div>
@@ -44,7 +44,7 @@ const Navbar = () => {
             <div className="font-bold capitalize mr-2">abu</div>
             <div className="capitalize">sayed</div>
           </div>
-        </div>
+        </a>
         <div className="menu md:block hidden">
           <ul className="links flex items-center gap-6">
             {navItems.map((navItem) => (

@@ -19,7 +19,7 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <div className="copyright md:mt-0 mt-3">
+        <div className="copyright text-[#d5d5d5] md:mt-0 mt-3">
           &copy; {year} All rights reserved. Abu Sayed.
         </div>
       </div>
