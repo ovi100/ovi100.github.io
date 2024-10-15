@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/education.json";
 
 const EducationAnimation = () => {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+  }, []);
+
   const options = {
     loop: true,
     autoplay: true,
@@ -11,8 +17,9 @@ const EducationAnimation = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  const width = window.screen.width > 600 ? 500 : "100%";
-  const height = window.screen.width > 600 ? 500 : "100%";
+
+  const width = windowWidth > 600 ? 500 : "100%";
+  const height = windowWidth > 600 ? 500 : "100%";
 
   return (
     <div className="w-full">
