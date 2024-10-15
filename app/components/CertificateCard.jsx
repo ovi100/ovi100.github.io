@@ -5,6 +5,7 @@ const CertificateCard = ({ item }) => {
   return (
     <a
       href={link}
+      target="_blank"
       className="certificate flex items-center gap-5 border-2 border-[#444] rounded-md mb-4 translate-y-0 transition duration-300 ease-linear hover:shadow-[0_12px_17px_rgba(0,0,0,.12)] hover:cursor-pointer hover:-translate-y-2"
     >
       <div className="image bg-[#444] h-32 md:flex hidden items-center justify-center p-8">

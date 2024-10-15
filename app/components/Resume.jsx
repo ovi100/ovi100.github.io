@@ -34,7 +34,7 @@ const Resume = () => {
             ))}
           </div>
         </div>
-        <div className="education lg:flex lg:flex-row-reverse justify-center xl:gap-14 lg:gap-7 md:mb-0 mb-5">
+        <div className="education lg:flex lg:flex-row-reverse justify-center xl:gap-14 lg:gap-7 md:mb-0 mb-5 xl:mt-5 lg:mt-14">
           <div className="image -mt-10">
             <EducationAnimation />
           </div>

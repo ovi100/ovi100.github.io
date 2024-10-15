@@ -506,9 +506,9 @@ const person = {
     },
   ],
   languages: [
+    { name: "Bengali", label: "Native", percentage: "100%", width: "w-[100%]" },
     { name: "English", label: "B2", percentage: "70%", width: "w-[70%]" },
     { name: "German", label: "A1", percentage: "17%", width: "w-[17%]" },
-    { name: "Hindi", label: "A2", percentage: "34%", width: "w-[34%]" },
   ],
   social_media: [
     {

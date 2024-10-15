@@ -11,9 +11,12 @@ const EducationAnimation = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+  const width = window.screen.width > 600 ? 500 : "100%";
+  const height = window.screen.width > 600 ? 500 : "100%";
+
   return (
-    <div className="w-full h-full">
-      <Lottie options={options} width={500} height={500} />
+    <div className="w-full">
+      <Lottie options={options} width={width} height={height} />
     </div>
   );
 };

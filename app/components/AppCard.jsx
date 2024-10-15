@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AppCard = ({ item }) => {
   return (
-    <div className="item-item bg-white relative block border border-gray-200 rounded-lg shadow p-3">
+    <div className="item-item bg-[#181818] dark:bg-white relative block border border-[#141414] dark:border-gray-200 rounded-lg shadow-[0_1px_3px_rgba(0,0,0,1)] dark:shadow p-3">
       <div className="content w-[90%]">
         <a className="block" href={"/project/" + item.id}>
           <div className="item-icon-name flex items-center gap-x-2">
@@ -13,7 +13,7 @@ const AppCard = ({ item }) => {
             />
             <div className="text">
               <div
-                className="text text-sm text-black font-semibold line-clamp-1"
+                className="text text-sm text-white dark:text-black font-semibold line-clamp-1"
                 title={item.name}
               >
                 {item.name}
