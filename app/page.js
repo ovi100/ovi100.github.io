@@ -4,10 +4,10 @@ import { Element } from "react-scroll";
 import About from "./components/About";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
+import Languages from "./components/Languages";
 import Resume from "./components/Resume";
 import Skills from "./components/Skills";
 import Works from "./components/Works";
-import Languages from "./components/Languages";
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,7 +37,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <Element name="about" className="about h-full md:h-screen p-5">
+      <Element name="about" className="about h-full md:h-[80vh] p-5">
         <About />
       </Element>
       <Element name="resume" className="resume p-5">

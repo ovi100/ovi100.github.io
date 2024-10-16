@@ -64,10 +64,10 @@ const Contact = () => {
     <div className="mt-20">
       <ToastContainer transition={Slide} />
       <div className="header text-center mb-5">
-        <div className="main-title text-xl text-[#f5f5f5] font-bold capitalize">
+        <div className="main-title text-xl text-theme dark:text-[#f5f5f5] font-bold capitalize">
           contact
         </div>
-        <div className="line bg-[#333] w-[80px] h-[2px] mx-auto mt-1">
+        <div className="line bg-[#333333] w-[80px] h-[2px] mx-auto mt-1">
           <div className="bg-blue-500 w-[40px] h-[2px]"></div>
         </div>
       </div>
@@ -76,16 +76,16 @@ const Contact = () => {
           {contacts.map((contact) => (
             <div className="phone flex gap-5 mb-4 last:mb-0" key={contact.name}>
               <div className="icon">{contact.icon}</div>
-              <div className="text text-[#f5f5f5] text-lg">{contact.text}</div>
+              <div className="text text-theme dark:text-[#f5f5f5] text-lg">{contact.text}</div>
             </div>
           ))}
         </div>
         <div className="contact-form lg:flex-[0.6_1_0%] md:flex-[1_1_0%] md:mt-0 mt-5">
           <div className="header mb-5">
-            <div className="contact-title text-xl text-[#f5f5f5] font-bold capitalize">
+            <div className="contact-title text-xl text-theme dark:text-[#f5f5f5] font-bold capitalize">
               how can i help you?
             </div>
-            <div className="line bg-[#333] w-[190px] h-[2px] mt-1">
+            <div className="line bg-[#333333] w-[190px] h-[2px] mt-1">
               <div className="bg-blue-500 w-[40px] h-[2px]"></div>
             </div>
           </div>

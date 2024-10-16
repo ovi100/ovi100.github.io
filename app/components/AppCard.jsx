@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AppCard = ({ item }) => {
   return (
-    <div className="item-item bg-[#181818] dark:bg-white relative block border border-[#141414] dark:border-gray-200 rounded-lg shadow-[0_1px_3px_rgba(0,0,0,1)] dark:shadow p-3">
+    <div className="item-item bg-white dark:bg-[#181818] relative block border border-gray-200 dark:border-[#141414] rounded-lg shadow dark:shadow-[0_1px_3px_rgba(0,0,0,1)] p-3">
       <div className="content w-[90%]">
         <a className="block" href={"/project/" + item.id}>
           <div className="item-icon-name flex items-center gap-x-2">
@@ -13,7 +13,7 @@ const AppCard = ({ item }) => {
             />
             <div className="text">
               <div
-                className="text text-sm text-white dark:text-black font-semibold line-clamp-1"
+                className="text text-sm text-theme dark:text-white font-semibold line-clamp-1"
                 title={item.name}
               >
                 {item.name}
@@ -54,11 +54,10 @@ const AppCard = ({ item }) => {
           </svg>
         </a>
         <a
-          className={`px-2 py-1.5 ${
-            item.platform === "android"
-              ? "bg-green-500 hover:bg-green-600"
-              : "bg-orange-500 hover:bg-orange-600"
-          } text-xs font-medium text-center text-white rounded focus:ring-0 focus:outline-none capitalize`}
+          className={`px-2 py-1.5 ${item.platform === "android"
+            ? "bg-green-500 hover:bg-green-600"
+            : "bg-orange-500 hover:bg-orange-600"
+            } text-xs font-medium text-center text-white rounded focus:ring-0 focus:outline-none capitalize`}
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"

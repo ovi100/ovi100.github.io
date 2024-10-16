@@ -7,8 +7,8 @@ export async function POST(req) {
   const transporter = nodemailer.createTransport({
     service: "gmail", // Can use other services like Outlook, SMTP, etc.
     auth: {
-      user: process.env.EMAIL_USER, // Your email
-      pass: process.env.EMAIL_PASS, // Your gmail app password
+      user: "sayeed.abu02@gmail.com", // Your email
+      pass: "sjaq tnkd jaoo prsg", // Your gmail app password
     },
   });
 
@@ -16,17 +16,25 @@ export async function POST(req) {
     // Send email
     await transporter.sendMail({
       from: email,
-      to: process.env.EMAIL_USER, // Your email to receive messages
-      subject: subject ? subject : `New message from ${name.charAt(0).toUpperCase() + name.slice(1)}`,
+      to: "sayeed.abu02@gmail.com", // Your email to receive messages
+      subject: subject
+        ? subject
+        : `New message from ${name.charAt(0).toUpperCase() + name.slice(1)}`,
       text: message,
       html: subject
         ? `
-          <p>New message from <strong>${name.charAt(0).toUpperCase() + name.slice(1)}</strong></p> 
-          <p><strong>Name:</strong> ${name.charAt(0).toUpperCase() + name.slice(1)}</p>
+          <p>New message from <strong>${
+            name.charAt(0).toUpperCase() + name.slice(1)
+          }</strong></p> 
+          <p><strong>Name:</strong> ${
+            name.charAt(0).toUpperCase() + name.slice(1)
+          }</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Message:</strong><br/>${message}</p>`
         : `
-          <p><strong>Name:</strong> ${name.charAt(0).toUpperCase() + name.slice(1)}</p>
+          <p><strong>Name:</strong> ${
+            name.charAt(0).toUpperCase() + name.slice(1)
+          }</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Message:</strong><br/>${message}</p>`,
     });

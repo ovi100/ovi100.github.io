@@ -22,12 +22,12 @@ const About = () => {
         />
       </motion.div>
       <motion.div
-        className="text text-white 2xl:flex-[0.4_1_0%] xl:flex-[0.5_1_0%] lg:flex-[0.8_1_0%] text-center lg:text-left mt-5 lg:mt-0"
+        className="text text-theme dark:text-white 2xl:flex-[0.4_1_0%] xl:flex-[0.5_1_0%] lg:flex-[0.8_1_0%] text-center lg:text-left mt-5 lg:mt-0"
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="title text-base text-[#aaa] capitalize mb-2">
+        <div className="title text-base text-theme dark:text-secondary capitalize mb-2">
           <ReactTypingEffect
             text={[
               "software engineer",
@@ -38,10 +38,10 @@ const About = () => {
             typingDelay={1000}
           />
         </div>
-        <div className="name text-5xl text-[#f5f5f5] capitalize mb-2">
+        <div className="name text-5xl text-[#a1a1a1] dark:text-[#f5f5f5] capitalize mb-2">
           abu sayed
         </div>
-        <div className="short-text text-sm text-[#d5d5d5] leading-6">
+        <div className="short-text text-sm text-theme dark:text-[#d5d5d5] leading-6">
           I am an experienced Full Stack Developer and React expert specializing
           in JavaScript, MongoDB, and Express JS. Having developed web and
           mobile-based applications and optimized REST API calls to improve page
@@ -59,14 +59,14 @@ const About = () => {
         </div>
         <div className="buttons flex items-center gap-5 mt-5 justify-center lg:justify-start">
           <a
-            className="bg-[#333] border-2 border-blue-400 cursor-pointer rounded-3xl px-4 py-2 hover:bg-blue-400"
+            className="bg-[#333333] text-white border-2 border-blue-400 cursor-pointer rounded-3xl px-4 py-2 hover:bg-blue-400"
             href="https://shorturl.at/oAYli"
             target="_blank"
           >
             Download CV
           </a>
           <Link
-            className="bg-[#333] border-2 border-[#d5d5d5] capitalize cursor-pointer rounded-3xl px-6 py-2 hover:bg-[#d5d5d5]"
+            className="bg-[#333333] text-white border-2 border-[#d5d5d5] capitalize cursor-pointer rounded-3xl px-6 py-2 hover:bg-[#d5d5d5]"
             to="contact"
             spy={true}
             smooth={true}

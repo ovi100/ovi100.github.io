@@ -1,8 +1,7 @@
 import { useState } from "react";
-import ProjectCard from "./ProjectCard";
-import TabNav from "./TabNav";
 import { person } from "../data";
 import AppCard from "./AppCard";
+import TabNav from "./TabNav";
 
 const Works = () => {
   const navItems = ["all", "ecommerce", "react js", "react native"];
@@ -27,10 +26,10 @@ const Works = () => {
   return (
     <div className="mt-20">
       <div className="header text-center mb-5">
-        <div className="main-title text-xl text-[#f5f5f5] font-bold capitalize">
+        <div className="main-title text-xl text-theme dark:text-[#f5f5f5] font-bold capitalize">
           portfolio
         </div>
-        <div className="line bg-[#333] w-[80px] h-[2px] mx-auto mt-1">
+        <div className="line bg-[#333333] w-[80px] h-[2px] mx-auto mt-1">
           <div className="bg-blue-500 w-[30px] h-[2px]"></div>
         </div>
       </div>

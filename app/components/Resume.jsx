@@ -1,9 +1,7 @@
-import { expImage, eduImage } from "@/public/assets/images";
-import ResumeCard from "./ResumeCard";
-import Image from "next/image";
 import { person } from "../data";
-import ResumeAnimation from "./animations/ResumeAnimation";
 import EducationAnimation from "./animations/EducationAnimation";
+import ResumeAnimation from "./animations/ResumeAnimation";
+import ResumeCard from "./ResumeCard";
 
 const Resume = () => {
   const educations = person.educations;
@@ -12,7 +10,7 @@ const Resume = () => {
 
   return (
     <div className="mt-20">
-      <div className="title text-white text-5xl text-center capitalize p-5">
+      <div className="title text-theme dark:text-white text-5xl text-center capitalize p-5">
         resume
       </div>
       <div className="content 2xl:w-3/4 xl:w-[90%] w-[95%] mx-auto mt-10">
@@ -22,11 +20,11 @@ const Resume = () => {
           </div>
           <div className="exp-content">
             <div className="header mb-10">
-              <div className="main-title text-xl text-[#f5f5f5] font-bold capitalize">
+              <div className="main-title text-xl text-theme dark:text-[#f5f5f5] font-bold capitalize">
                 experience
               </div>
-              <div className="line bg-[#333] w-[100px] h-[2px] mt-1">
-                <div className="bg-blue-500 w-[30px] h-[2px]"></div>
+              <div className="line bg-[#333333] w-[100px] h-[2px] mt-1">
+                <div className="bg-blue-500 w-[50px] h-[2px]"></div>
               </div>
             </div>
             {experiences.map((experience, index) => (
@@ -40,11 +38,11 @@ const Resume = () => {
           </div>
           <div className="exp-content">
             <div className="header mb-10">
-              <div className="main-title text-xl text-[#f5f5f5] font-bold capitalize">
+              <div className="main-title text-xl text-theme dark:text-[#f5f5f5] font-bold capitalize">
                 education
               </div>
-              <div className="line bg-[#333] w-[90px] h-[2px] mt-1">
-                <div className="bg-blue-500 w-[30px] h-[2px]"></div>
+              <div className="line bg-[#333333] w-[90px] h-[2px] mt-1">
+                <div className="bg-blue-500 w-[50px] h-[2px]"></div>
               </div>
             </div>
             {educations.map((education, index) => (

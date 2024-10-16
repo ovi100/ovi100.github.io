@@ -29,10 +29,10 @@ const Skills = () => {
   return (
     <div className="mt-20">
       <div className="header text-center mb-5">
-        <div className="main-title text-xl text-[#f5f5f5] font-bold capitalize">
+        <div className="main-title text-xl text-theme dark:text-[#f5f5f5] font-bold capitalize">
           skills
         </div>
-        <div className="line bg-[#333] w-[60px] h-[2px] mx-auto mt-1">
+        <div className="line bg-[#333333] w-[60px] h-[2px] mx-auto mt-1">
           <div className="bg-blue-500 w-[30px] h-[2px]"></div>
         </div>
       </div>
@@ -45,7 +45,7 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {all.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
                   key={index}
                 >
                   {item.name}
@@ -57,7 +57,7 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {languages.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
                   key={index}
                 >
                   {item.name}
@@ -69,7 +69,7 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {frontend.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
                   key={index}
                 >
                   {item.name}
@@ -81,7 +81,7 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {backend.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
                   key={index}
                 >
                   {item.name}
@@ -93,7 +93,7 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {platforms.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
                   key={index}
                 >
                   {item.name}
@@ -105,7 +105,7 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {tools.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
                   key={index}
                 >
                   {item.name}
@@ -117,7 +117,7 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {others.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
                   key={index}
                 >
                   {item.name}
@@ -129,7 +129,7 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {communication_languages.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
                   key={index}
                 >
                   {item.name}
