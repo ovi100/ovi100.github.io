@@ -506,7 +506,12 @@ const person = {
     },
   ],
   languages: [
-    { name: "Bengali", label: "Native", percentage: "100%", width: "w-[100%]" },
+    {
+      name: "Bengali (Native)",
+      label: "",
+      percentage: "100%",
+      width: "w-[100%]",
+    },
     { name: "English", label: "B2", percentage: "70%", width: "w-[70%]" },
     { name: "German", label: "A1", percentage: "17%", width: "w-[17%]" },
   ],
