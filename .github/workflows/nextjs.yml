@@ -50,7 +50,7 @@ jobs:
 
       # Step 6: Export the Next.js app as static HTML
       - name: Export static files
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+        run: npm run export
 
       # Step 7: Upload artifact for deployment
       - name: Upload GitHub Pages artifact
