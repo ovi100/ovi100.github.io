@@ -1,4 +1,5 @@
 "use client";
+import emailjs from "emailjs-com";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Slide, ToastContainer, toast } from "react-toastify";
@@ -16,41 +17,30 @@ const Contact = () => {
   } = useForm();
 
   const formSubmit = async (data) => {
+    // console.log(process.env.EMAILJS_SERVICE_ID,
+    //   process.env.EMAILJS_TEMPLATE_ID,
+    //   process.env.EMAILJS_USER_ID,)
     try {
       setIsLoading(true);
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.success) {
-            let message = data.message;
-            toast.success(message, {
-              hideProgressBar: true,
-              theme: "colored",
-            });
-          } else {
-            let message = data.message;
-            toast.error(message, {
-              hideProgressBar: true,
-              theme: "colored",
-            });
-          }
-        })
-        .catch((error) => {
-          let message = error.message;
-          toast.error(message, {
-            hideProgressBar: true,
-            theme: "colored",
-          });
+      const result = await emailjs.send(
+        process.env.EMAILJS_SERVICE_ID,
+        process.env.EMAILJS_TEMPLATE_ID,
+        data,
+        process.env.EMAILJS_USER_ID,
+      );
+
+      console.log('email js response', result);
+
+      if (result.status === 200) {
+        let message = "Message sent successfully";
+        toast.success(message, {
+          hideProgressBar: true,
+          theme: "colored",
         });
+      }
     } catch (error) {
-      let message = error.message;
-      toast.error(message, {
+      let message = error.text;
+      toast.success(message, {
         hideProgressBar: true,
         theme: "colored",
       });

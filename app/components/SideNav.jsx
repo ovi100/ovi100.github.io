@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 
-const Sidenav = ({ open, toggleOpen }) => {
+const SideNav = ({ open, toggleOpen }) => {
   const [sticky, setSticky] = useState(false);
   const containerRef = useRef(null);
   const pages = [
@@ -49,17 +49,15 @@ const Sidenav = ({ open, toggleOpen }) => {
   return (
     <>
       <motion.div
-        className={`sidebar bg-[#262626] w-80 fixed top-0 h-screen shadow-[0_4px_4px_rgba(0,0,0,0.25)] md:hidden ${
-          !open ? "-right-full" : "right-0"
-        } z-30 ease-in-out duration-300 px-3 py-2`}
+        className={`sidebar bg-[#262626] w-80 fixed top-0 h-screen shadow-[0_4px_4px_rgba(0,0,0,0.25)] md:hidden ${!open ? "-right-full" : "right-0"
+          } z-30 ease-in-out duration-300 px-3 py-2`}
         initial={false}
         animate={open ? "open" : "closed"}
         ref={containerRef}
       >
         <div
-          className={`menu-icon cursor-pointer select-none absolute top-8 right-7 z-50 md:hidden ${
-            !sticky ? "hidden" : ""
-          }`}
+          className={`menu-icon cursor-pointer select-none absolute top-8 right-7 z-50 md:hidden ${!sticky ? "hidden" : ""
+            }`}
           onClick={toggleOpen}
         >
           <motion.span
@@ -100,15 +98,14 @@ const Sidenav = ({ open, toggleOpen }) => {
         </div>
       </motion.div>
       <div
-        className={`sidebar-overlay bg-[rgba(101,101,101,0.4)] w-full h-full fixed inset-0 z-20 ease-in-out duration-300 ${
-          !open
+        className={`sidebar-overlay bg-[rgba(101,101,101,0.4)] w-full h-full fixed inset-0 z-20 ease-in-out duration-300 ${!open
             ? "-right-full opacity-0 invisible"
             : "right-0 opacity-100 visible"
-        }`}
+          }`}
         onClick={toggleOpen}
       ></div>
     </>
   );
 };
 
-export default Sidenav;
+export default SideNav;

@@ -2,7 +2,8 @@
 import { motion, useCycle } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import Sidenav from "./Sidenav";
+
+import SideNav from "./SideNav";
 
 const Navbar = () => {
   const [theme, setTheme] = useState('light');
@@ -108,7 +109,7 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <Sidenav open={open} toggleOpen={toggleOpen} />
+      <SideNav open={open} toggleOpen={toggleOpen} />
     </>
   );
 };
