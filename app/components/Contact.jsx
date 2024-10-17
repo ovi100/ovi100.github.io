@@ -28,9 +28,9 @@ const Contact = () => {
     const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
-    // console.log("SERVICE ID", SERVICE_ID, typeof SERVICE_ID);
-    // console.log("TEMPLATE ID", TEMPLATE_ID, typeof TEMPLATE_ID);
-    // console.log("USER ID", USER_ID, typeof USER_ID);
+    console.log("SERVICE ID", SERVICE_ID);
+    console.log("TEMPLATE ID", TEMPLATE_ID);
+    console.log("USER ID", USER_ID);
     try {
       setIsLoading(true);
       const result = await emailjs.send(
@@ -39,6 +39,8 @@ const Contact = () => {
         formData,
         USER_ID
       );
+
+      console.log("EmailJs response:", JSON.stringify(result));
 
       if (result.status === 200) {
         let message = "Message sent successfully";
@@ -53,6 +55,7 @@ const Contact = () => {
         hideProgressBar: true,
         theme: "colored",
       });
+      console.log("Error sending email:", error);
     } finally {
       reset();
       setIsLoading(false);

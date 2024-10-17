@@ -31,6 +31,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Set environment variables
+        run: |
+          echo "NEXT_PUBLIC_EMAILJS_USER_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_USER_ID }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_EMAILJS_USER_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_USER_ID }}" >> $GITHUB_ENV
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -76,15 +81,15 @@ jobs:
         # Inject secret environment variables
       - name: Set up environment variables
         env:
-          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
-          EMAILJS_USER_ID: ${{ secrets.EMAILJS_USER_ID }}
+          NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+          NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
+          NEXT_PUBLIC_EMAILJS_USER_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_USER_ID }}
         run: echo "Environment variables injected"
       - name: Build with Next.js
         env:
-          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
-          EMAILJS_USER_ID: ${{ secrets.EMAILJS_USER_ID }}
+          NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+          NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
+          NEXT_PUBLIC_EMAILJS_USER_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_USER_ID }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
