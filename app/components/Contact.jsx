@@ -17,19 +17,28 @@ const Contact = () => {
   } = useForm();
 
   const formSubmit = async (data) => {
-    // console.log(process.env.EMAILJS_SERVICE_ID,
-    //   process.env.EMAILJS_TEMPLATE_ID,
-    //   process.env.EMAILJS_USER_ID,)
+    const { name, email, subject, message } = data;
+    const formData = {
+      name: name.charAt(0).toUpperCase() + name.slice(1),
+      email,
+      subject,
+      message,
+    };
+
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+    // console.log("SERVICE ID", SERVICE_ID, typeof SERVICE_ID);
+    // console.log("TEMPLATE ID", TEMPLATE_ID, typeof TEMPLATE_ID);
+    // console.log("USER ID", USER_ID, typeof USER_ID);
     try {
       setIsLoading(true);
       const result = await emailjs.send(
-        process.env.EMAILJS_SERVICE_ID,
-        process.env.EMAILJS_TEMPLATE_ID,
-        data,
-        process.env.EMAILJS_USER_ID,
+        SERVICE_ID,
+        TEMPLATE_ID,
+        formData,
+        USER_ID
       );
-
-      console.log('email js response', result);
 
       if (result.status === 200) {
         let message = "Message sent successfully";
@@ -66,7 +75,9 @@ const Contact = () => {
           {contacts.map((contact) => (
             <div className="phone flex gap-5 mb-4 last:mb-0" key={contact.name}>
               <div className="icon">{contact.icon}</div>
-              <div className="text text-theme dark:text-[#f5f5f5] text-lg">{contact.text}</div>
+              <div className="text text-theme dark:text-[#f5f5f5] text-lg">
+                {contact.text}
+              </div>
             </div>
           ))}
         </div>
