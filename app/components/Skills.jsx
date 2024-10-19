@@ -45,10 +45,16 @@ const Skills = () => {
             <div className="flex items-center flex-wrap gap-5">
               {all.map((item, index) => (
                 <div
-                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
+                  className={`${
+                    item.focusable ? "focused-skill skill-item" : "skill-item"
+                  }`}
                   key={index}
                 >
-                  {item.name}
+                  {item.focusable ? (
+                    <div className="skill-item-text">{item.name}</div>
+                  ) : (
+                    <span>{item.name}</span>
+                  )}
                 </div>
               ))}
             </div>
@@ -56,10 +62,7 @@ const Skills = () => {
           {active === "programming" && (
             <div className="flex items-center flex-wrap gap-5">
               {languages.map((item, index) => (
-                <div
-                  className="border border-blue-500 text-theme dark:text-white text-center text-sm rounded-3xl px-3 py-1.5"
-                  key={index}
-                >
+                <div className="skill-item" key={index}>
                   {item.name}
                 </div>
               ))}

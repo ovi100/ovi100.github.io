@@ -8,6 +8,16 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      keyframes: {
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(180deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        "spin-slow": "rotate 2s linear infinite",
+      },
       colors: {
         active: "#3B82F6",
         theme: "#222222",

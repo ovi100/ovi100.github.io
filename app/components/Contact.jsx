@@ -189,7 +189,7 @@ const Contact = () => {
                           fill="currentFill"
                         />
                       </svg>
-                      <span>Sending...</span>
+                      <span>sending...</span>
                     </div>
                   ) : (
                     <span>send message</span>
