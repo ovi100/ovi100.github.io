@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { AppList } from "../components/AppList";
+import TabNav from "../components/TabNav";
 import { person } from "../data";
-import AppCard from "./AppCard";
-import TabNav from "./TabNav";
 
 const Works = () => {
   const navItems = ["all", "ecommerce", "react js", "react native"];
   const [active, setActive] = useState(navItems[0]);
+
 
   const ecommerces = person.projects.filter(
     (project) =>
@@ -23,6 +24,13 @@ const Works = () => {
       project.tag.some((item) => item === "React Native")
   );
 
+  const tabs = [
+    { id: 1, title: "all", content: <AppList dataList={person.projects} /> },
+    { id: 2, title: "ecommerce", content: <AppList dataList={ecommerces} /> },
+    { id: 3, title: "react js", content: <AppList dataList={react_js} /> },
+    { id: 4, title: "react native", content: <AppList dataList={react_native} /> },
+  ];
+
   return (
     <div className="mt-20">
       <div className="header text-center mb-5">
@@ -38,34 +46,10 @@ const Works = () => {
           <TabNav navItems={navItems} active={active} setActive={setActive} />
         </div>
         <div className="tab-content mt-10">
-          {active === "all" && (
-            <div className="all-project grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-3">
-              {person.projects.map((project, index) => (
-                <AppCard key={index} item={project} />
-              ))}
-            </div>
-          )}
-          {active === "ecommerce" && (
-            <div className="ecommerce-project grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-3">
-              {ecommerces.map((project, index) => (
-                <AppCard key={index} item={project} />
-              ))}
-            </div>
-          )}
-          {active === "react js" && (
-            <div className="react-project grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-3">
-              {react_js.map((project, index) => (
-                <AppCard key={index} item={project} />
-              ))}
-            </div>
-          )}
-          {active === "react native" && (
-            <div className="native-project grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-3">
-              {react_native.map((project, index) => (
-                <AppCard key={index} item={project} />
-              ))}
-            </div>
-          )}
+          {active === "all" && <AppList dataList={person.projects} />}
+          {active === "ecommerce" && <AppList dataList={ecommerces} />}
+          {active === "react js" && <AppList dataList={react_js} />}
+          {active === "react native" && <AppList dataList={react_native} />}
         </div>
       </div>
     </div>

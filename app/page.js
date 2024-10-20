@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Element } from "react-scroll";
-import About from "./components/About";
-import Certificates from "./components/Certificates";
-import Contact from "./components/Contact";
-import Languages from "./components/Languages";
-import Resume from "./components/Resume";
-import Skills from "./components/Skills";
-import Works from "./components/Works";
+import About from "./sections/About";
+import Certificates from "./sections/Certificates";
+import Contact from "./sections/Contact";
+import Languages from "./sections/Languages";
+import Resume from "./sections/Resume";
+import Skills from "./sections/Skills";
+import Works from "./sections/Works";
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false);

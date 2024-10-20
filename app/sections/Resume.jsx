@@ -1,7 +1,8 @@
+import EducationAnimation from "../components/animations/EducationAnimation";
+import ResumeAnimation from "../components/animations/ResumeAnimation";
+import ResumeCard from "../components/ResumeCard";
 import { person } from "../data";
-import EducationAnimation from "./animations/EducationAnimation";
-import ResumeAnimation from "./animations/ResumeAnimation";
-import ResumeCard from "./ResumeCard";
+
 
 const Resume = () => {
   const educations = person.educations;

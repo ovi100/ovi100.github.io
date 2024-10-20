@@ -1,21 +1,6 @@
-import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import { SlScreenSmartphone } from "react-icons/sl";
-import { FiMapPin } from "react-icons/fi";
-import { HiOutlineMail } from "react-icons/hi";
-import certificate from "../../public/assets/images/icons/certificate.png";
-import web from "../../public/assets/images/icons/web.png";
-import android from "../../public/assets/images/icons/android.png";
 import {
   appIcon,
   appImage1,
-  appImage2,
-  appImage3,
-  appImage4,
-  appImage5,
-  appImage6,
-  appImage7,
-  appImage8,
-  appImage9,
   appImage10,
   appImage11,
   appImage12,
@@ -24,7 +9,22 @@ import {
   appImage15,
   appImage16,
   appImage17,
+  appImage2,
+  appImage3,
+  appImage4,
+  appImage5,
+  appImage6,
+  appImage7,
+  appImage8,
+  appImage9,
 } from "@/public/assets/images";
+import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FiMapPin } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { SlScreenSmartphone } from "react-icons/sl";
+import android from "../../public/assets/images/icons/android.png";
+import certificate from "../../public/assets/images/icons/certificate.png";
+import web from "../../public/assets/images/icons/web.png";
 
 const person = {
   educations: [
@@ -202,7 +202,7 @@ const person = {
         focusable: false,
       },
       {
-        name: "Google Maps API",
+        name: "Map API",
         percentage: "90%",
         width: "w-[90%]",
         focusable: true,

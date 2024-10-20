@@ -1,5 +1,5 @@
+import SkillBox from "../components/SkillBox";
 import { person } from "../data";
-import SkillBox from "./SkillBox";
 
 const Languages = () => {
   const { languages } = person;

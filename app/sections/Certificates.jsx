@@ -1,5 +1,6 @@
+import CertificateCard from "../components/CertificateCard";
 import { person } from "../data";
-import CertificateCard from "./CertificateCard";
+
 
 const Certificates = () => {
   const certificates = person.certificates;
