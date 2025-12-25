@@ -5,7 +5,7 @@ import {
   Certificates,
   Contact,
   Educations,
-  Experience,
+  Experiences,
   Nav,
   Projects,
   Skills,
@@ -26,7 +26,7 @@ export default function Page() {
       <Nav />
       <About person={person} />
       <Skills items={person.skills} />
-      <Experience items={person.experiences} />
+      <Experiences items={person.experiences} />
       <Educations items={person.educations} />
       <TechStacks />
       <Certificates items={person.certificates} />

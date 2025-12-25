@@ -1,9 +1,9 @@
 import Section from "./Section";
-import type { Exp } from "@/app/lib/person";
 import Card from "../Card";
 import TiltCard from "../TiltCard";
+import { Experience } from "@/app/types";
 
-const Experience = ({ items }: { items: Exp[] }) => {
+const Experiences = ({ items }: { items: Experience[] }) => {
   return (
     <Section id="experience" title="Experience">
       <div className="mx-auto max-w-6xl">
@@ -19,4 +19,4 @@ const Experience = ({ items }: { items: Exp[] }) => {
   );
 };
 
-export default Experience;
+export default Experiences;

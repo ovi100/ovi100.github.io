@@ -3,7 +3,8 @@ import BgAnimation from './animation/BgAnimation';
 import Card from './Card';
 import Certificates from './sections/Certificates';
 import Contact from './sections/Contact';
-import Experience from './sections/Experience';
+import Educations from './sections/Educations';
+import Experiences from './sections/Experiences';
 import Nav from './Nav';
 import ProgressBar from './ProgressBar';
 import Projects from './sections/Projects';
@@ -11,8 +12,6 @@ import Skills from './sections/Skills';
 import SkillCard from './SkillCard';
 import TiltCard from './TiltCard';
 import TechStacks from './sections/TechStacks';
-import Educations from './sections/Educations';
-
 
 
 
@@ -23,7 +22,7 @@ export {
   Certificates,
   Contact,
   Educations,
-  Experience,
+  Experiences,
   Nav,
   ProgressBar,
   Projects,

@@ -1,7 +1,7 @@
 "use client";
-import type { Project } from "../../lib/person";
 import Section from "./Section";
 import Card from "../Card";
+import { Project } from "@/app/types";
 
 const Projects = ({ items }: { items: Project[] }) => {
   return (
