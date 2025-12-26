@@ -7,7 +7,9 @@ export type Social = {
 export type Education = {
   year: string;
   institute: string;
-  title: string
+  title: string;
+  startDate?: string;
+  endDate?: string
 };
 export type Experience = {
   year: string;

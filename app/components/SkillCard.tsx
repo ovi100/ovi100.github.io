@@ -27,8 +27,8 @@ import {
   SiAuthelia,
   SiSupabase,
 } from "react-icons/si";
-import { getExactYears } from '../utils';
 import ProgressBar from './ProgressBar';
+import { getDuration } from '../utils';
 
 const Icons: IconsType = {
   "code": <LuCode />,
@@ -89,7 +89,7 @@ const SkillCard = ({ title, items }: { title: string; items: SkillItem[] }) => {
                 </div>
                 <div>
                   <p className="text-xs text-white">{item.name}</p>
-                  <p className="text-xs text-white">{getExactYears(item.startDate || '', item.endDate || '')}</p>
+                  <p className="text-xs text-white">{getDuration(item.startDate || '', item.endDate || '')}</p>
                 </div>
               </div>
               <span className={`text-xs bg-white/10 ${item.label === 'Expert' ? 'text-green-400'

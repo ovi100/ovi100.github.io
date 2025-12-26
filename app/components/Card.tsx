@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { getExactYears } from "../utils";
+import { getDuration } from "../utils";
 
 type CardProps = {
   item: any;
@@ -31,7 +31,7 @@ const Card = ({ item }: CardProps) => {
         <p className="text-sm text-neutral-300">{item.institute}</p>
         <p className="text-xs text-neutral-400">{item.year}</p>
         {experienceCard && (
-          <p className="text-xs text-neutral-400 mt-1">{getExactYears(item.startDate, item.endDate)}</p>
+          <p className="text-xs text-neutral-400 mt-1">{getDuration(item.startDate, item.endDate)}</p>
         )}
       </div>
       <div
@@ -68,7 +68,7 @@ const Card = ({ item }: CardProps) => {
       target={item.url ? "_blank" : undefined}
       rel={item.url ? "noreferrer" : undefined}
       onMouseMove={onMouseMove}
-      className="card-gradient group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden p-5 transition will-change-transform"
+      className="card-gradient group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden p-5 will-change-transform block h-full mx-2"
     >
       <div className="flex items-center justify-between gap-3">
         <h3 className="font-semibold text-white/90 group-hover:text-white/50 transition">
@@ -79,7 +79,7 @@ const Card = ({ item }: CardProps) => {
           <HiArrowNarrowRight />
         </div>
       </div>
-      <p className="mt-2 text-sm text-neutral-300">{item.description}</p>
+      <p className="mt-2 text-sm text-neutral-300 line-clamp-3">{item.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {item.tags?.map((tag: string) => (
           <span

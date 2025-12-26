@@ -1,7 +1,7 @@
 import { Person } from "../types";
 
 const day = new Date().getDate();
-const month = new Date().getMonth();
+const month = new Date().getMonth() + 1;
 const year = new Date().getFullYear();
 
 export const person: Person = {
@@ -17,23 +17,41 @@ export const person: Person = {
     { name: 'Instagram', link: 'https://www.instagram.com/ovi_2016' },
   ],
   educations: [
-    { year: '2011 — 2015', institute: 'American International University—Bangladesh', title: 'BSc. Computer Science' },
-    { year: '2009 — 2011', institute: 'Govt. Adamjee Nagar M W College', title: 'HSC (Science)' },
-    { year: '2007 — 2009', institute: 'M W High School', title: 'SSC (Science)' }
+    {
+      year: '2011 — 2015',
+      institute: 'American International University—Bangladesh',
+      title: 'BSc. Computer Science',
+      startDate: '2011-09-06',
+      endDate: '2015-09-06'
+    },
+    {
+      year: '2009 — 2011',
+      institute: 'Govt. Adamjee Nagar M W College',
+      title: 'HSC (Science)',
+      startDate: '2009-01-01',
+      endDate: '2011-01-01'
+    },
+    {
+      year: '2007 — 2009',
+      institute: 'M W High School',
+      title: 'SSC (Science)',
+      startDate: '2007-01-01',
+      endDate: '2009-01-01'
+    }
   ],
   experiences: [
     {
-      year: 'Jan 2023 — Jan 2026',
+      year: 'Jan 2023 — Dec 2025',
       institute: 'ACI Logistics Ltd.',
       title: 'Full Stack Developer',
-      startDate: '2023-01-08',
-      endDate: '2026-01-08'
+      startDate: '2023-01-01',
+      endDate: '2025-12-31'
     },
     {
       year: 'Dec 2017 — Dec 2022',
       institute: 'Storrea Ltd.',
-      title: 'Frontend Developer(Mid Level)',
-      startDate: '2017-12-02',
+      title: 'Frontend Developer',
+      startDate: '2017-12-01',
       endDate: '2022-12-31'
     },
     {
@@ -54,36 +72,36 @@ export const person: Person = {
   skills: {
     frontend: [
       { name: 'React', label: 'Expert', width: 'w-[90%]', startDate: '2022-10-01', endDate: `${year}-${month}-${day}` },
-      { name: 'React Native', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'JavaScript', label: 'Expert', width: 'w-[90%]', startDate: '2017-01-01', endDate: `${year}-${month}-${day}` },
-      { name: 'TypeScript', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Next.js', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Tailwind CSS', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'React Native', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'JavaScript', label: 'Expert', width: 'w-[90%]', startDate: '2017-12-02', endDate: `${year}-${month}-${day}` },
+      { name: 'TypeScript', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Next.js', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Tailwind CSS', label: 'Expert', width: 'w-[90%]', startDate: '2022-10-01', endDate: `${year}-${month}-${day}` },
     ],
     backend: [
-      { name: 'Node.js', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Python', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Express.js', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Firebase', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'SQL', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'MongoDB', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Node.js', label: 'Expert', width: 'w-[90%]', startDate: '2020-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Python', label: 'Intermediate', width: 'w-[60%]', startDate: '2025-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Express.js', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Firebase', label: 'Advance', width: 'w-[75%]', startDate: '2022-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'SQL', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'MongoDB', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
     ],
     tools: [
-      { name: 'Git & GitHub', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Figma', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Vercel', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Render', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Notion', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'AI Tools', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Git & GitHub', label: 'Expert', width: 'w-[90%]', startDate: '2017-12-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Figma', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Vercel', label: 'Advance', width: 'w-[75%]', startDate: '2022-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Render', label: 'Advance', width: 'w-[75%]', startDate: '2022-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Notion', label: 'Advance', width: 'w-[75%]', startDate: '2024-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'AI Tools', label: 'Advance', width: 'w-[75%]', startDate: '2023-05-01', endDate: `${year}-${month}-${day}` },
     ],
     others: [
-      { name: 'RESTful APIs', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Chart.js', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Three.js', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Maps API', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'JWT', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      { name: 'Supabase', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
-      // { name: 'HotUpdater', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'RESTful APIs', label: 'Expert', width: 'w-[90%]', startDate: '2021-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Chart.js', label: 'Expert', width: 'w-[90%]', startDate: '2022-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Three.js', label: 'Advance', width: 'w-[75%]', startDate: '2025-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Maps API', label: 'Expert', width: 'w-[90%]', startDate: '2022-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'JWT', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'Supabase', label: 'Advance', width: 'w-[75%]', startDate: '2024-01-01', endDate: `${year}-${month}-${day}` },
+      // { name: 'HotUpdater', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-01', endDate: `${year}-${month}-${day}` },
     ]
   },
   certificates: [
