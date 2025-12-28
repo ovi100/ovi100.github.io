@@ -78,7 +78,7 @@ const Nav = () => {
           <li>
             <a
               className="bg-white/10 text-green-300 rounded-3xl px-4 py-2 hover:text-green-200 transition-colors"
-              href="https://shorturl.at/oAYli"
+              href="https://shorturl.at/CMjdX"
               target="_blank"
             >
               Hire me
@@ -123,7 +123,7 @@ const Nav = () => {
               <li>
                 <a
                   className="bg-white/10 text-green-300 rounded-3xl px-4 py-2 hover:text-green-200 transition-colors"
-                  href="https://shorturl.at/oAYli"
+                  href="https://shorturl.at/CMjdX"
                   target="_blank"
                 >
                   Hire me
