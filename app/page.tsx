@@ -34,7 +34,7 @@ export default function Page() {
       <Contact person={person} />
 
       <footer className="py-12 text-center text-xs text-neutral-400">
-        © {new Date().getFullYear()} Abu Sayed. Built with Next.js, Three.js and Tailwind.
+        © {new Date().getFullYear()} Abu Sayed. Built with Next.js 15, Three.js and Tailwind.
       </footer>
     </main>
   );

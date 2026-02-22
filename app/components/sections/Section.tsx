@@ -1,14 +1,6 @@
-import { ReactNode } from "react";
+import { SectionType } from "@/app/types";
 
-export default function Section({
-  id,
-  title,
-  children,
-}: {
-  id: string;
-  title: string;
-  children: ReactNode;
-}) {
+export default function Section({ id, title, children, }: SectionType) {
   return (
     <section id={id} className="scroll-mt-10 snap-start min-h-screen py-24 sm:py-28" aria-label={title}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

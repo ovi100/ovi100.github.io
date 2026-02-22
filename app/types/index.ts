@@ -71,5 +71,11 @@ export type TechStack = {
 };
 
 export type IconsType = {
-  [key: string]: React.ReactNode
+  [key: string]: ReactNode
+};
+
+export type SectionType = {
+  id: string;
+  title: string;
+  children: ReactNode;
 };
